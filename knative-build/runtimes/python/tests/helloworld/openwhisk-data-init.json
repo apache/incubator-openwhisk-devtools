@@ -1,0 +1,8 @@
+{
+    "value": {
+        "name" : "python-helloworld",
+        "main" : "main",
+        "binary": false,
+        "code" : "def main(params):\n\treturn {'payload': 'Hello World!'}\n"
+    }
+}
