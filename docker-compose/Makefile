@@ -98,7 +98,8 @@ download-catalog:
 .PHONY: quick-start-pause
 quick-start-pause:
 	echo "waiting for the Whisk invoker to come up ... "
-	until $$(curl -s --output /dev/null --silent --head --fail http://$(DOCKER_HOST_IP):8085/ping); do printf '.'; sleep 5; done
+	# removed --head from this curl because of an upstream change https://github.com/apache/openwhisk/pull/4494
+	until $$(curl -s --output /dev/null --silent --fail http://$(DOCKER_HOST_IP):8085/ping); do printf '.'; sleep 5; done
 	echo " ... OK"
 	sleep 30
 
